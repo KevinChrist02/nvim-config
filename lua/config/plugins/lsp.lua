@@ -17,6 +17,7 @@ return {
             local capabilities = require('blink.cmp').get_lsp_capabilities()
 
             require("lspconfig").lua_ls.setup { capabilities = capabilities }
+            require 'lspconfig'.ruby_lsp.setup { capabilities = capabilities }
 
             vim.api.nvim_create_autocmd('LspAttach', {
                 callback = function(args)
